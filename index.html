@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Project Management Tool</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- LOGIN / REGISTER -->
+
+<div id="authSection">
+
+    <div class="auth-box">
+
+        <h1>ProjectFlow</h1>
+
+        <p>Manage your projects easily</p>
+
+        <div id="registerBox">
+
+            <h2>Create Account</h2>
+
+            <input
+                type="text"
+                id="registerName"
+                placeholder="Name">
+
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="Email">
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Password">
+
+            <button onclick="register()">
+                Register
+            </button>
+
+            <p>
+                Already have an account?
+                <span onclick="showLogin()">
+                    Login
+                </span>
+            </p>
+
+        </div>
+
+        <div id="loginBox" style="display:none;">
+
+            <h2>Login</h2>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email">
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password">
+
+            <button onclick="login()">
+                Login
+            </button>
+
+            <p>
+                Don't have an account?
+                <span onclick="showRegister()">
+                    Register
+                </span>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- MAIN APPLICATION -->
+
+<div id="appSection" style="display:none;">
+
+    <header>
+
+        <h1>ProjectFlow</h1>
+
+        <div>
+            <span id="welcomeUser"></span>
+
+            <button onclick="logout()">
+                Logout
+            </button>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- CREATE PROJECT -->
+
+        <section class="create-project">
+
+            <h2>Create New Project</h2>
+
+            <input
+                type="text"
+                id="projectName"
+                placeholder="Project name">
+
+            <input
+                type="text"
+                id="projectDescription"
+                placeholder="Project description">
+
+            <button onclick="createProject()">
+                + Create Project
+            </button>
+
+        </section>
+
+        <!-- NOTIFICATIONS -->
+
+<div class="notification-box">
+    <h3>🔔 Notifications</h3>
+
+    <div id="notifications">
+        No notifications
+    </div>
+</div>
+</section>
+
+
+        <!-- PROJECT LIST -->
+
+        <section>
+
+            <h2>My Projects</h2>
+
+            <div id="projects"
+                 class="project-list">
+            </div>
+
+        </section>
+
+
+        <!-- SELECTED PROJECT -->
+
+        <section id="projectArea"
+                 style="display:none;">
+
+            <h2 id="selectedProjectName">
+            </h2>
+
+            <p id="selectedProjectDescription">
+            </p>
+
+
+            <!-- CREATE TASK -->
+
+            <div class="task-form">
+
+                <h3>Create Task</h3>
+
+                <input
+                    type="text"
+                    id="taskTitle"
+                    placeholder="Task title">
+
+                <input
+                    type="text"
+                    id="taskDescription"
+                    placeholder="Task description">
+
+                <select id="assignedUser">
+
+                    <option value="">
+                        Assign to user
+                    </option>
+
+                </select>
+
+                <button onclick="createTask()">
+                    Add Task
+                </button>
+
+            </div>
+
+
+            <!-- BOARD -->
+
+            <div class="board">
+
+                <div class="column">
+
+                    <h3>To Do</h3>
+
+                    <div id="todo"></div>
+
+                </div>
+
+
+                <div class="column">
+
+                    <h3>In Progress</h3>
+
+                    <div id="progress"></div>
+
+                </div>
+
+
+                <div class="column">
+
+                    <h3>Completed</h3>
+
+                    <div id="completed"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
